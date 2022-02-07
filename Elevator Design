@@ -1,0 +1,35 @@
+What I thought :
+1. Classes/objects - Lift, InternalRequest, ExternalRequest, Request, Scheduler
+   Direction --> This is enum
+   Lift 
+     -id
+     -Direction :up, down , idle --> can be implemented as enum
+     -State : moving, idle, not working --> enum 
+     -current floor
+     - <processupjobs>
+     - <processdownjobs>
+     -initialize();
+     
+  ExternalRequest
+    - Direction 
+    - Source Floor
+    
+  InternalRequest  --> this could have natural sorting 
+    - Target floor
+    
+  Request
+    -Internal
+    -External
+    
+  Scheduler
+    - lift []
+    - #floors
+    - #elevators
+    -initialize() -> this initializes the lift array
+    - handleRequest(Request) : 1. assign closet lift to handle external lift 2. add to the respective job of the lift depending on direction
+
+resources ;
+1. https://www.youtube.com/watch?v=R8omJm-Wl34 : for basic understanding
+2.https://leetcode.com/discuss/interview-question/object-oriented-design/124660/ood-design-elevator
+3.https://medium.com/geekculture/system-design-elevator-system-design-interview-question-6e8d03ce1b44
+4. https://www.youtube.com/watch?v=siqiJAJWUVg
